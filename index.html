@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--
     Plain-Academic by Vasilios Mavroudis
@@ -14,131 +15,137 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .text {
+      font-size: 14px;
+      padding-left: 20px;
+    }
+  </style>
 </head>
 <body>
 
-
 <!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-	  <div class="container">
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-		</div>
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#CV">CV</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-				  <li><a href="index.html">Home</a></li>
-				  <li><a href="#projects">Projects</a></li>
-				  <li><a href="#publications">Publications</a></li>
-				  <li><a href="#CV">CV</a></li>
-		  </ul>
-		</div>
-	  </div>
-	</nav>
-
-  <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <!-- Entries Column -->
-            <div class="col-md-8" style="height: 50vh;">
-
-                <!-- Main Image -->
-                <img class="img-responsive" src="Photo_ID.png" alt=""><br>
-
-                <div style="margin-top:3%; text-align:justify;">
-					<p> Welcome to my website! I am a Ph.D. candidate in Economics at the University of Paris Dauphine - PSL. My fields of interests include globalization topics such as international trade,
-                    FDI, labor markets, and the study of preferential trade agreements. On this website, you will find my ongoing projects as well as publication and code repositories. </p>
-                </div>
-            </div>
-
-            <!-- Contact Info on the Sidebar -->
-            <div class="col-md-4">
-                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Anthonin Levelu</b></div><br>
-                <p> <br>
-                University of Paris Dauphine - PSL (LEDa)<br>
-                Place du Maréchal de Lattre de Tassigny<br>
-                75016 Paris, FRANCE<br>
-                <dd><a href="mailto:anthonin.levelu@dauphine.psl.eu">anthonin.levelu@dauphine.psl.eu</a></dd>
-                </p>
-            </div>
-
-
-            <!-- Links on the Sidebar -->
-            <div class="col-md-4" style="margin-top:2%">
-              <dd><a href="https://scholar.google.com/citations?user=q1Z1LO4AAAAJ&hl=en&oi=ao">Google Scholar</a></dd>
-              <dd><a href="https://www.linkedin.com/in/anthonin-levelu-dauphine/">LinkedIn</a></dd>
-              <dd><a href="https://github.com/anthoninlevelu">Github repo</a></dd>
-            </div>
-
-            <!-- Projects -->
-            <div class="col-md-8" style="height: 100vh;">
-                <h2 id="projects">Current projects</h2>
-
-                <strong>Projects</strong><br/>
-                <ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">Investor-state dispute settlement mechanism and firms' FDI</a>, Job Market paper</li>
-                </ul>
-
-            </div>
-
-
-            <!-- Projects -->
-            <div class="col-md-12" style="height: 100vh; margin-top:2%;">
-                <h2 id="publications">Publications</h2>
-                <br>
-                <strong>Peer-reviewed</strong><br/>
-
-                <br>
-                <ul>
-                <li class="paper" words="add, your, keywords, here"><a href="https://academic.oup.com/joeg/advance-article-abstract/doi/10.1093/jeg/lbae014/7679454">Deep Trade Agreements and International Migration: The role of visa provisions</a>,
-                    joint with Anna Maria Mayda and Gianluca Orefice  <br>
-                    <b>Journal of Economic Geography</b
-                </li>
-                <br>
-                <br>
-                <li class="paper" words="add, your, keywords, here"><a href="https://academic.oup.com/cesifo/article-abstract/69/4/207/7505104">A Lockdown a Day Keeps the Doctor Away: The Global Effectiveness of Non-Pharmaceutical Interventions in Mitigating the Covid-19 Pandemic</a>,
-                    joint with Alexander Sandkamp  <br>
-                    <b>CESifo Economic Studies</b
-                </li>
-                </ul>
-
-                <br>
-                <br>
-                <strong>Policy Reports</strong><br/>
-                <br>
-                <ul>
-                <li class="paper" words="add, your, keywords, here"><a href="https://repository.unescap.org/handle/20.500.12870/1063">Implementation of the WTO trade facilitation agreement in Asia and the Pacific : 2 years on</a>,
-                    joint with Yann Duval  <br>
-                    <b>ESCAP Trade Insights</b
-                <br>
-                <br>
-
-                </ul>
-
-
-            </div>
-
-            <!-- CV -->
-            <div class="col-md-8" style="height: 100vh;">
-            <br>
-                <h2 id="CV">CV</h2>
-                <li class="paper" words="add, your, keywords, here"> <a href="CV_updated_2024.pdf" target="blank">Download my latest CV here</a>  </li>
-
-            </div>
-
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <!-- Entries Column -->
+    <div class="col-md-10" style="height: 45vh;">
+      <!-- Photos and stuff -->
+      <div class="container">
+        <div class="image">
+          <img src="Photo_ID.png">
         </div>
-
-
+        <div class="text">
+          <div style="font-family: 'Times', sans-serif; font-size: 32px;"><b>Anthonin Levelu</b></div><br>
+          <p>
+            University of Paris Dauphine - PSL (LEDa)<br>
+            Place du Maréchal de Lattre de Tassigny<br>
+            75016 Paris, FRANCE<br>
+            <dd><a href="mailto:anthonin.levelu@dauphine.psl.eu">anthonin.levelu@dauphine.psl.eu</a></dd>
+          </p>
+          <dd><a href="https://scholar.google.com/citations?user=q1Z1LO4AAAAJ&hl=en&oi=ao">Google Scholar</a></dd>
+          <dd><a href="https://www.linkedin.com/in/anthonin-levelu-dauphine/">LinkedIn</a></dd>
+          <dd><a href="https://github.com/anthoninlevelu">Github repo</a></dd>
+        </div>
+      </div>
     </div>
 
-</body>
+    <!-- Welcome text -->
+    <div class="col-md-10" style="height: 100vh; text-align:justify;">
+        <p>Welcome to my website! I am a Ph.D. candidate in Economics at the University of Paris Dauphine - PSL. My fields of interests include globalization topics such as international trade,
+          FDI, labor markets, and the study of preferential trade agreements. On this website, you will find my ongoing projects as well as publication and code repositories.</p>
+    </div>
 
+
+    <!-- Projects -->
+    <div class="col-md-10" style="height: 100vh; text-align:justify;">
+      <h2 id="projects">Current projects</h2>
+      <strong>Projects</strong><br/>
+      <ul>
+        <br>
+        <li class="paper" words="add, your, keywords, here"><a href="#">Investor-state dispute settlement mechanism and firms' FDI</a>, Job Market paper <br> <br>
+          <u>Abstract:</u> This paper examines how investor-state dispute settlement mechanisms (ISDS) influence firm foreign direct investment (FDI) by reducing policy uncertainty. Constructing a unique dataset on firm-level FDI, which includes 105,615 parent firms from 130 countries of origin between 2000 and 2021, we demonstrate that ISDS increases the probability of first entry by 1.5% at the aggregate level. This finding is robust to endogeneity concerns, employing an inverse propensity weighting strategy and an instrumental variable approach. At the firm level, ISDS boosts the stock of foreign direct investment in subsidiary firms located in countries that are members of the agreement by 29%. Notably, we show that ISDS has an even greater positive effect on investment during periods of high policy uncertainty, as indicated by election timing. Our results remain robust when controlling for the depth of regional trade agreements (RTAs) as well as other provisions. Consistent with model predictions, we also reveal that the largest firms benefit the most from ISDS mechanisms, given their ability to absorb the costs of filing a claim.
+          <br>
+          <br>
+        </li>
+        <li class="paper" words="add, your, keywords, here"><a href="#">’Bilateral trade exposure and Deep PTA’</a>, joint with (N.Rocha) <br> <br>
+          <u>Abstract:</u> Over the past two decades, the surge in global preferential trade agreements (PTAs) has paralleled the trend of increasing globalization. While existing studies have broadly examined the general role of PTAs, their determinants, especially amid growing complex value chains, have been insufficiently investigated. This paper offers a more comprehensive understanding of the forces influencing the signature of trade agreements and their types. The paper classifies agreements into three different types, depending on the frequency of legally enforceable provisions they include: <i>WTO+</i>, agreements covering WTO disciplines; <i>WTO-X (Core provisions)</i>, agreements going beyond WTO disciplines and covering areas such as Competition policy, Investment, IP rights, and Capital movement provisions; and <i>Progressive</i>, agreements covering areas beyond trade such as environment, labor, and visa regulation. The paper explores how different types of risk shape import-exposed countries' decisions to sign these agreements. Results highlight that the more exposed a country is vis-à-vis a partner in terms of intermediary inputs, the more likely it is to sign an agreement. This probability is higher for Progressive agreements compared to <i> WTO-X </i> or <i> WTO+ </i>. Specifically, a 10% increase in the import exposure index increases the probability of signing a <i>Progressive</i> agreement by 1%. The overall impact of exposure on PTA signing is magnified when the sourcing country is considered politically unstable or prone to military conflicts or climate events.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Publication -->
+    <div class="col-md-10" style="height: 100vh; margin-top:2%;">
+      <h2 id="publications">Publications</h2>
+      <br>
+      <strong>Peer-reviewed</strong><br/>
+      <br>
+      <ul>
+        <li class="paper" words="add, your, keywords, here"><a href="https://academic.oup.com/joeg/advance-article-abstract/doi/10.1093/jeg/lbae014/7679454">Deep Trade Agreements and International Migration: The role of visa provisions</a>,
+          joint with Anna Maria Mayda and Gianluca Orefice (2024) <br>
+          <b>Journal of Economic Geography</b>
+        </li>
+        <br>
+        <br>
+        <li class="paper" words="add, your, keywords, here"><a href="https://academic.oup.com/cesifo/article-abstract/69/4/207/7505104">A Lockdown a Day Keeps the Doctor Away: The Global Effectiveness of Non-Pharmaceutical Interventions in Mitigating the Covid-19 Pandemic</a>,
+          joint with Alexander Sandkamp (2023)  <br>
+          <b>CESifo Economic Studies</b>
+        </li>
+      </ul>
+      <br>
+      <br>
+      <strong>Policy Reports</strong><br/>
+      <br>
+      <ul>
+        <li class="paper" words="add, your, keywords, here"><a href="https://repository.unescap.org/handle/20.500.12870/1063">Implementation of the WTO trade facilitation agreement in Asia and the Pacific : 2 years on</a>,
+          joint with Yann Duval (2019) <br>
+          <b>ESCAP Trade Insights</b>
+        <br>
+        <br>
+      </ul>
+    </div>
+
+    <!-- CV -->
+    <div class="col-md-8" style="height: 100vh;">
+      <br>
+      <h2 id="CV">CV</h2>
+      <li class="paper" words="add, your, keywords, here"><a href="CV_updated_2024.pdf" target="blank">Download my latest CV here</a></li>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>
