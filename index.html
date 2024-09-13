@@ -108,7 +108,6 @@
 </html>
 
 
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -119,21 +118,43 @@
         /* Styling for the news banner container */
         .news-banner {
             background-color: #f5f5f5;
-            border-bottom: 2px solid #004080;
+            border-top: 2px solid #004080;
             padding: 10px 0;
-            margin-top: 200px;
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
+            position: fixed; /* Fix the banner to the bottom of the page */
+            bottom: 0; /* Align to the bottom */
+            left: 0; /* Align to the left */
+            width: 100%; /* Full width */
+            display: flex; /* Use flexbox to align items */
+            align-items: center; /* Center content vertically */
             font-family: 'Arial', sans-serif;
+            z-index: 1000; /* Ensure it stays on top of other elements */
+        }
+
+        /* Style for the "Latest News" label */
+        .news-label {
+            background-color: #004080;
+            color: white;
+            padding: 5px 15px;
+            font-weight: bold;
+            white-space: nowrap; /* Prevent label text wrapping */
+            flex-shrink: 0; /* Prevent the label from shrinking */
+        }
+
+        /* Styling for the news text container */
+        .news-content-wrapper {
+            overflow: hidden; /* Hide overflow of content */
+            flex: 1; /* Take up the remaining space */
+            position: relative; /* Position relative for scrolling effect */
         }
 
         /* Styling for the news text */
         .news-content {
             display: inline-block;
-            animation: scroll 30s linear infinite;
+            animation: scroll 30s linear infinite; /* Slower speed */
             color: #333;
             font-size: 18px;
+            white-space: nowrap; /* Prevent wrapping */
+            position: absolute; /* Absolute positioning for smooth scrolling */
         }
 
         /* Animation for the scrolling effect */
@@ -144,18 +165,6 @@
             100% {
                 transform: translateX(-100%);
             }
-        }
-
-        /* Style for the "Latest News" label */
-        .news-label {
-            background-color: #004080;
-            color: white;
-            padding: 5px 15px;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            font-weight: bold;
         }
     </style>
 </head>
@@ -172,3 +181,6 @@
 
 </body>
 </html>
+
+
+
