@@ -150,7 +150,7 @@
         /* Styling for the news text */
         .news-content {
             display: inline-block;
-            animation: scroll 30s linear infinite; /* Slower speed */
+            animation: scroll 10s linear infinite;
             color: #333;
             font-size: 18px;
             white-space: nowrap; /* Prevent wrapping */
@@ -158,12 +158,12 @@
         }
 
         /* Animation for the scrolling effect */
-        @keyframes scroll {
+          @keyframes scroll {
             0% {
-                transform: translateX(100%);
+                transform: translateX(calc(100%)); /* Start off-screen to the right with margin */
             }
             100% {
-                transform: translateX(-100%);
+                transform: translateX(115px); /* End at a margin from the left edge */
             }
         }
     </style>
