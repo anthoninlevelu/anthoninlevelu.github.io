@@ -16,7 +16,24 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+
+  <!-- CSS for smooth transition -->
   <style>
+    /* Page transition effects */
+    body {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    body.fade-out {
+      opacity: 0;
+    }
+
+    /* General styling */
     .container {
       display: flex;
       align-items: center;
@@ -27,21 +44,98 @@
       max-width: 100%;
       max-height: 100%;
     }
-    .scholarlogo{
-       display: inline-block;
-       width:   100px;
-       height:  100px;
-       background-image: url("icon-google-scholar");
+
+    .scholarlogo {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-image: url("icon-google-scholar");
     }
+
     .text {
       font-size: 14px;
       padding-left: 20px;
     }
+
+    /* Academic News Banner */
+    .news-banner {
+      background-color: #f5f5f5;
+      border-top: 2px solid #004080;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+      z-index: 1000;
+    }
+
+    .news-label {
+      background-color: #004080;
+      color: white;
+      padding: 5px 15px;
+      font-weight: bold;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .news-content-wrapper {
+      overflow: hidden;
+      flex: 1;
+      position: relative;
+    }
+
+    .news-content {
+      display: inline-block;
+      animation: scroll 12s linear infinite;
+      color: #333;
+      font-size: 18px;
+      white-space: nowrap;
+      position: absolute;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(calc(100% + 15px));
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
   </style>
+
+  <!-- Smooth Page Transition JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Fade in the page
+      document.body.classList.add('fade-in');
+
+      // Handle smooth navigation transitions
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function (event) {
+          // Prevent immediate navigation
+          event.preventDefault();
+
+          // Fade out current page
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+
+          // Delay the navigation until fade-out is done
+          setTimeout(() => {
+            window.location.href = this.href;
+          }, 500);
+        });
+      });
+    });
+  </script>
+
 </head>
+
 <body>
 
-<!-- Navigation -->
+  <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -75,7 +169,14 @@
           <img src="ID_AL2.jpg" width="250" style="max-width:100%;height:auto; " >
         </div>
         <div class="text">
-          <div style="font-family: 'Times', sans-serif; font-size: 32px;"><b>Anthonin Levelu</b></div><br>
+          <div style="font-family: 'Anton', sans-serif; font-size: 32px;">
+              <b>
+                  <p style="Color: #004080;">
+                    Anthonin Levelu
+                  </p>
+              </b>
+          </div>
+            <br>
           <p>
             University of Paris Dauphine - PSL (LEDa)<br>
             Place du Maréchal de Lattre de Tassigny<br>
@@ -130,6 +231,7 @@
             z-index: 1000; /* Ensure it stays on top of other elements */
         }
 
+
         /* Style for the "Latest News" label */
         .news-label {
             background-color: #004080;
@@ -138,6 +240,8 @@
             font-weight: bold;
             white-space: nowrap; /* Prevent label text wrapping */
             flex-shrink: 0; /* Prevent the label from shrinking */
+            opacity: 1;
+            z-index: 1100;
         }
 
         /* Styling for the news text container */
@@ -150,20 +254,21 @@
         /* Styling for the news text */
         .news-content {
             display: inline-block;
-            animation: scroll 10s linear infinite;
+            animation: scroll 12s linear infinite;
             color: #333;
             font-size: 18px;
             white-space: nowrap; /* Prevent wrapping */
             position: absolute; /* Absolute positioning for smooth scrolling */
+            z-index: 1000;
         }
 
         /* Animation for the scrolling effect */
           @keyframes scroll {
             0% {
-                transform: translateX(calc(100%)); /* Start off-screen to the right with margin */
+                transform: translateX(calc(100% + 15px)); /* Start off-screen to the right with margin */
             }
             100% {
-                transform: translateX(115px); /* End at a margin from the left edge */
+                transform: translateX(-100%); /* End off-screen to the left */
             }
         }
     </style>

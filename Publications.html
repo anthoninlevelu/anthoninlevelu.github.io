@@ -1,21 +1,31 @@
-
 <!DOCTYPE html>
-<!--
-    Plain-Academic by Vasilios Mavroudis
-    Released under the Simplified BSD License/FreeBSD (2-clause) License.
-    https://github.com/mavroudisv/plain-academic
--->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en">
 <head>
-  <title>Anthonin Levelu website</title>
+  <title>Anthonin Levelu website - Publications</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+
+  <!-- CSS for smooth transition -->
   <style>
+    /* Page transition effects */
+    body {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    body.fade-out {
+      opacity: 0;
+    }
+
+    /* General styling */
     .container {
       display: flex;
       align-items: center;
@@ -26,18 +36,46 @@
       max-width: 100%;
       max-height: 100%;
     }
-    .scholarlogo{
-       display: inline-block;
-       width:   100px;
-       height:  100px;
-       background-image: url("icon-google-scholar");
+
+    .scholarlogo {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-image: url("icon-google-scholar");
     }
+
     .text {
       font-size: 14px;
       padding-left: 20px;
     }
   </style>
+
+  <!-- Smooth Page Transition JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Fade in the page on load
+      document.body.classList.add('fade-in');
+
+      // Handle smooth navigation transitions
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function (event) {
+          // Prevent immediate navigation
+          event.preventDefault();
+
+          // Fade out current page
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+
+          // Delay navigation to the target page until fade-out is complete
+          setTimeout(() => {
+            window.location.href = this.href;
+          }, 500);
+        });
+      });
+    });
+  </script>
 </head>
+
 <body>
 
 <!-- Navigation -->
@@ -51,7 +89,7 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
@@ -62,45 +100,42 @@
   </div>
 </nav>
 
+<!-- Publications Section -->
+<div class="col-md-12" style="height: 100vh; text-align:center;">
+  <h1 id="publications">Publications</h1>
+  <br>
 
-    <!-- Publication -->
-    <div class="col-md-12" style="height: 100vh; text-align:center;">
-      <h1 id="publications">Publications</h1>
-      <br>
+  <!-- Peer-Reviewed Publications -->
+  <h2 style="text-align:justify; font-size:2em;"> <strong>Peer-reviewed</strong> </h2>
+  <br>
+  <ul>
+    <li class="paper" style="text-align:justify;">
+      <a href="https://academic.oup.com/joeg/advance-article-abstract/doi/10.1093/jeg/lbae014/7679454">
+        Deep Trade Agreements and International Migration: The role of visa provisions</a>, joint with Anna Maria Mayda and Gianluca Orefice (2024)
+      <br><b>Journal of Economic Geography</b>
+    </li>
+    <br><br>
+    <li class="paper" style="text-align:justify;">
+      <a href="https://academic.oup.com/cesifo/article-abstract/69/4/207/7505104">
+        A Lockdown a Day Keeps the Doctor Away: The Global Effectiveness of Non-Pharmaceutical Interventions in Mitigating the Covid-19 Pandemic</a>,
+        joint with Alexander Sandkamp (2023)
+      <br><b>CESifo Economic Studies</b>
+    </li>
+  </ul>
 
+  <br><br>
 
-      <h2 style="text-align:justify; font-size:2em; " > <strong>Peer-reviewed</strong> </h2> <br/>
-
-      <br>
-      <ul>
-        <li class="paper" style=text-align:justify; words="add, your, keywords, here"><a href="https://academic.oup.com/joeg/advance-article-abstract/doi/10.1093/jeg/lbae014/7679454">Deep Trade Agreements and International Migration: The role of visa provisions</a>,
-          joint with Anna Maria Mayda and Gianluca Orefice (2024) <br>
-          <b>Journal of Economic Geography</b>
-        </li>
-        <br>
-        <br>
-        <li class="paper" style=text-align:justify; words="add, your, keywords, here"><a href="https://academic.oup.com/cesifo/article-abstract/69/4/207/7505104">A Lockdown a Day Keeps the Doctor Away: The Global Effectiveness of Non-Pharmaceutical Interventions in Mitigating the Covid-19 Pandemic</a>,
-          joint with Alexander Sandkamp (2023)  <br>
-          <b>CESifo Economic Studies</b>
-        </li>
-      </ul>
-      <br>
-      <br>
-
-      <h2 style="text-align:justify; font-size:2em; " > <strong>Policy Reports</strong> </h2> <br/>
-
-
-      <br>
-      <ul>
-        <li class="paper" style=text-align:justify; words="add, your, keywords, here"><a href="https://repository.unescap.org/handle/20.500.12870/1063">Implementation of the WTO trade facilitation agreement in Asia and the Pacific : 2 years on</a>,
-          joint with Yann Duval (2019) <br>
-          <b>ESCAP Trade Insights</b>
-        <br>
-        <br>
-      </ul>
-    </div>
-
-  </div>
+  <!-- Policy Reports -->
+  <h2 style="text-align:justify; font-size:2em;"><strong>Policy Reports</strong></h2>
+  <br>
+  <ul>
+    <li class="paper" style="text-align:justify;">
+      <a href="https://repository.unescap.org/handle/20.500.12870/1063">
+        Implementation of the WTO trade facilitation agreement in Asia and the Pacific : 2 years on</a>, joint with Yann Duval (2019)
+      <br><b>ESCAP Trade Insights</b>
+    </li>
+  </ul>
+  <br><br>
 </div>
 
 </body>
