@@ -24,6 +24,7 @@
       background-color: rgba(231, 232, 209, 0.10);
       opacity: 0.1;
       transition: opacity 0.5s ease-in-out;
+      padding-top: 70px;
     }
 
     body.fade-in {
@@ -114,6 +115,14 @@
     /* Optional: Change the color on hover */
     .navbar-inverse .navbar-nav > li > a:hover {
       color: #FFFFFF; /* You can choose any hover color, here it's white */
+    }
+
+    /* Fix the navbar at the top */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
     }
 
   </style>

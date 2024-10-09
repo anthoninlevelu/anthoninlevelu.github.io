@@ -14,6 +14,7 @@
       background-color: rgba(231, 232, 209, 0.10);
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
+      padding-top: 70px;
     }
     .fade-in {
       opacity: 1 !important;
@@ -43,6 +44,13 @@
       color: #B85042; /* Set your specific hex code */
     }
 
+    /* Fix the navbar at the top */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+    }
   </style>
   <script>
     // Fade-in on load
