@@ -21,7 +21,7 @@
   <style>
     /* Page transition effects */
     body {
-      background-color: rgba(211, 84, 0, 0.1);
+      background-color: rgba(231, 232, 209, 0.10);
       opacity: 0.1;
       transition: opacity 0.5s ease-in-out;
     }
@@ -60,7 +60,7 @@
 
     /* Academic News Banner */
     .news-banner {
-      background-color: #f5f5f5;
+      background-color: #b85042;
       border-top: 2px solid #004080;
       padding: 10px 0;
       position: fixed;
@@ -74,7 +74,7 @@
     }
 
     .news-label {
-      background-color: #004080;
+      background-color: #b85042;
       color: white;
       padding: 5px 15px;
       font-weight: bold;
@@ -91,7 +91,7 @@
     .news-content {
       display: inline-block;
       animation: scroll 12s linear infinite;
-      color: #333;
+      color: #b85042;
       font-size: 18px;
       white-space: nowrap;
       position: absolute;
@@ -105,6 +105,17 @@
         transform: translateX(-100%);
       }
     }
+
+    /* Set the color for the navigation links */
+    .navbar-inverse .navbar-nav > li > a {
+      color: #B85042; /* Set your specific hex code */
+    }
+
+    /* Optional: Change the color on hover */
+    .navbar-inverse .navbar-nav > li > a:hover {
+      color: #FFFFFF; /* You can choose any hover color, here it's white */
+    }
+
   </style>
 
   <!-- Smooth Page Transition JS -->
@@ -131,6 +142,7 @@
       });
     });
   </script>
+
 
 </head>
 
@@ -172,7 +184,7 @@
         <div class="text">
           <div style="font-family: 'Anton', sans-serif; font-size: 32px;">
               <b>
-                  <p style="Color: #004080;">
+                  <p style="Color: #b85042;">
                     Anthonin Levelu
                   </p>
               </b>
@@ -219,8 +231,8 @@
     <style>
         /* Styling for the news banner container */
         .news-banner {
-            background-color: #f5f5f5;
-            border-top: 2px solid #004080;
+            background-color: rgba(231, 232, 209, 0.10);
+            border-top: 2px solid #b85042;
             padding: 10px 0;
             position: fixed; /* Fix the banner to the bottom of the page */
             bottom: 0; /* Align to the bottom */
@@ -235,7 +247,7 @@
 
         /* Style for the "Latest News" label */
         .news-label {
-            background-color: #004080;
+            background-color: #b85042;
             color: white;
             padding: 5px 15px;
             font-weight: bold;
