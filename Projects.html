@@ -42,6 +42,31 @@
       padding: 0 20px; /* Optional padding for more spacing */
     }
 
+    .abstract-toggle {
+      cursor: pointer;
+      color: #b85042;
+      font-size: 14px;
+      margin-left: 5px;
+      display: inline-flex;
+      align-items: left;
+    }
+
+    .abstract-toggle .arrow {
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 16px;
+    }
+
+    .abstract-content {
+      display: none;
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    li {
+    text-align: left;
+    }
+
     img {
       max-width: 100%;
       max-height: 100%;
@@ -74,29 +99,45 @@
 
   </style>
 
-  <!-- Smooth Page Transition JS -->
+<!-- Smooth Page Transition and Toggle JS -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Fade in the page on load
-      document.body.classList.add('fade-in');
+  document.addEventListener("DOMContentLoaded", function () {
+    // Smooth Page Transitions
+    document.body.classList.add('fade-in'); // Fade in on load
 
-      // Handle smooth navigation transitions
-      document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function (event) {
-          // Prevent immediate navigation
-          event.preventDefault();
+    document.querySelectorAll('a[href]').forEach(link => {
+      link.addEventListener('click', function (event) {
+        // Only apply fade-out if navigating to a new page
+        if (this.href !== window.location.href) {
+          event.preventDefault(); // Prevent immediate navigation
 
-          // Fade out current page
+          // Add fade-out effect
           document.body.classList.remove('fade-in');
           document.body.classList.add('fade-out');
 
-          // Delay navigation to the target page until fade-out is complete
+          // Delay navigation to allow fade-out animation
           setTimeout(() => {
             window.location.href = this.href;
-          }, 500);
-        });
+          }, 500); // Matches CSS transition duration
+        }
       });
     });
+
+    // Toggle Abstracts
+    document.querySelectorAll('.abstract-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function () {
+        const abstract = this.nextElementSibling; // Corresponding abstract content
+        const arrow = this.querySelector('.arrow'); // Arrow icon
+
+        // Toggle abstract visibility
+        const isOpen = abstract.style.display === 'block';
+        abstract.style.display = isOpen ? 'none' : 'block';
+
+        // Update arrow direction
+        arrow.textContent = isOpen ? '' : '';
+      });
+    });
+  });
   </script>
 </head>
 
@@ -134,18 +175,26 @@
   </h1>
   <br>
 
-    <li class="text-container" style="text-align:justify;">
+        <br><br>
+
+
+    <li>
       <a href="#">Investor-state dispute settlement mechanism and firms' FDI</a>, Job Market paper
-      <br><br>
+      <span class="abstract-toggle"> Read abstract <span class="arrow"></span></span>
+      <div class="abstract-content">
       <u>Abstract:</u> This paper examines how investor-state dispute settlement mechanisms (ISDS) influence firm foreign direct investment (FDI) by reducing policy uncertainty. Constructing a unique dataset on firm-level FDI, which includes 105,615 parent firms from 130 countries of origin between 2000 and 2021, we demonstrate that ISDS increases the probability of first entry by 1.5% at the aggregate level. This finding is robust to endogeneity concerns, employing an inverse propensity weighting strategy and an instrumental variable approach. At the firm level, ISDS boosts the stock of foreign direct investment in subsidiary firms located in countries that are members of the agreement by 29%. Notably, we show that ISDS has an even greater positive effect on investment during periods of high policy uncertainty, as indicated by election timing. Our results remain robust when controlling for the depth of regional trade agreements (RTAs) as well as other provisions. Consistent with model predictions, we also reveal that the largest firms benefit the most from ISDS mechanisms, given their ability to absorb the costs of filing a claim.
       <a href="https://github.com/anthoninlevelu/LSEG_workspace">LSEG Data extraction code example</a>
-      <br><br>
+      </div>
     </li>
 
-    <li class="text-container" style="text-align:justify;">
+        <br><br>
+
+
+    <li>
       <a href="#">Deep Integration in Sub-Saharan Africa: How Much Can PTAs
 Contribute to Regional Integration and How?</a>, joint with L.Fontagné, G.Santoni (...)
-      <br><br>
+      <span class="abstract-toggle"> Read abstract <span class="arrow"></span></span>
+      <div class="abstract-content">
       <u>Abstract:</u> This paper identifies the role of trade agreements in the economic integration of Sub-Saharan
 African economies (SSA). First, it indicates that the effect of PTAs on trade for SSA
 economies is lower relative to other regions, possibly due to the nature of their PTAs. Indeed,
@@ -155,29 +204,37 @@ all SSA PTAs are deepened (i.e. the intensive margin of PTAs). Results indicate 
 potential gains from trade in such a scenario. Finally, the paper proposes targeted policy
 recommendations on how to deepen trade agreements and discusses the implications for SSA
 PTAs.
-      <br><br>
+      </div>
     </li>
 
-    <li class="text-container" style="text-align:justify;">
+
+      <br><br>
+
+
+    <li>
       <a href="#">Bilateral trade exposure and Deep PTA</a>, joint with Nadia Rocha
-      <br><br>
+      <span class="abstract-toggle"> Read abstract <span class="arrow"></span></span>
+      <div class="abstract-content">
       <u>Abstract:</u> Over the past two decades, the surge in global preferential trade agreements (PTAs) has paralleled the trend of increasing globalization. While existing studies have broadly examined the general role of PTAs, their determinants, especially amid growing complex value chains, have been insufficiently investigated. This paper offers a more comprehensive understanding of the forces influencing the signature of trade agreements and their types. The paper classifies agreements into three different types, depending on the frequency of legally enforceable provisions they include: <i>WTO+</i>, agreements covering WTO disciplines; <i>WTO-X (Core provisions)</i>, agreements going beyond WTO disciplines and covering areas such as Competition policy, Investment, IP rights, and Capital movement provisions; and <i>Progressive</i>, agreements covering areas beyond trade such as environment, labor, and visa regulation. The paper explores how different types of risk shape import-exposed countries' decisions to sign these agreements. Results highlight that the more exposed a country is vis-à-vis a partner in terms of intermediary inputs, the more likely it is to sign an agreement. This probability is higher for Progressive agreements compared to <i> WTO-X </i> or <i> WTO+ </i>. Specifically, a 10% increase in the import exposure index increases the probability of signing a <i>Progressive</i> agreement by 1%. The overall impact of exposure on PTA signing is magnified when the sourcing country is considered politically unstable or prone to military conflicts or climate events.
-      <br><br>
+      </div>
     </li>
 
+      <br><br>
 
-    <li class="text-container" style="text-align:justify;">
+
+    <li>
       <a href="#">Import Competition and Outsourcing to Individual Workers</a>, joint with Romaine Loubes
-      <br><br>
-      <u>Abstract:</u> Firms facing higher import competition resort to adaptive strategies to maintain competitiveness.
-      While previous literature focused on general labor effects and reallocation,
-little is known about self-employed workers. This paper aims to study import competition
-and outsourcing to solo self-employed. At the aggregate level (EU - NUTS) our preliminary
-findings reveal that regions facing intensified import competition from China exhibit higher
-self-employed workers relative to their total workforce, controlling for country, region, and
-industry characteristics. The next step is to disentangle whether firms are indeed replacing
-traditional employees with solo self-employed when facing financial hardship, using French administrative data.
-      <br><br>
+      <span class="abstract-toggle"> Read abstract <span class="arrow"></span></span>
+      <div class="abstract-content">
+        <u>Abstract:</u> Firms facing higher import competition resort to adaptive strategies to maintain competitiveness.
+        While previous literature focused on general labor effects and reallocation,
+        little is known about self-employed workers. This paper aims to study import competition
+        and outsourcing to solo self-employed. At the aggregate level (EU - NUTS) our preliminary
+        findings reveal that regions facing intensified import competition from China exhibit higher
+        self-employed workers relative to their total workforce, controlling for country, region, and
+        industry characteristics. The next step is to disentangle whether firms are indeed replacing
+        traditional employees with solo self-employed when facing financial hardship, using French administrative data.
+      </div>
     </li>
 
   </ul>
