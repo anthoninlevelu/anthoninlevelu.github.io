@@ -27,6 +27,18 @@
       padding-top: 70px;
     }
 
+    .circular-image {
+      width: 40vw;           /* Takes 40% of the viewport width */
+      max-width: 250px;      /* Limit max size for desktop */
+      height: auto;
+      aspect-ratio: 1 / 1;   /* Keeps it square */
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #b85042;
+      display: block;
+      margin: 0 auto;        /* Centers it horizontally */
+    }
+
     body.fade-in {
       opacity: 1;
     }
@@ -188,7 +200,8 @@
       <!-- Photos and stuff -->
       <div class="container">
         <div class="image">
-          <img src="ID_AL2.jpg" width="250" style="max-width:100%;height:auto; " >
+            <img src="ID_AL2.jpg" alt="Profile Photo" class="circular-image">
+
         </div>
         <div class="text">
           <div style="font-family: 'Anton', sans-serif; font-size: 32px;">
